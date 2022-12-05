@@ -4,7 +4,7 @@ class Day3 < AOC
   def solve(part:)
     data = load_data.split("\n")
     if part == 1
-      data.map { |line| split_into_n_equal_strings(line, n: 2) }
+      data.map { |line| line.split_into_n_equal_strings(2) }
         .map { |compartment_pair| find_common_chars(compartment_pair).join }
         .map { letter_to_number(_1) }
         .sum
@@ -14,10 +14,6 @@ class Day3 < AOC
         .map { letter_to_number(_1) }
         .sum
     end
-  end
-
-  def split_into_n_equal_strings(string, n:)
-    string.chars.each_slice(string.length / n).map(&:join)
   end
 
   def find_common_chars(strings)
