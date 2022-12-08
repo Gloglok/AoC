@@ -2,7 +2,7 @@ require_relative "aoc"
 
 class Day7 < AOC
   def solve(part:)
-    # Maps the data into an array of commands with their results
+    # Maps the data into an array of user inputs with their results
     data = load_data.split("$ ")
       .map { |command| command.split("\n") }
     data.shift
@@ -21,7 +21,7 @@ class Day7 < AOC
     end
   end
 
-  # The 2 #build_ methods are a bit dirty
+  # The 2 #build_ methods are a bit ugly
   def build_tree(data)
     initialize_root
 
@@ -58,7 +58,7 @@ class Day7 < AOC
   end
 end
 
-# This is better
+# This is prettier
 class Folder7
   class << self
     attr_reader :folders
