@@ -12,12 +12,7 @@ defmodule Day1 do
     end)
   end
 
-  defp part1() do
-    moves = parse_input()
-
-    # Lock goes from 0 to 99 => modulo 100
-    max_pos = 100
-    initial_pos =  50
+  def part1(moves, max_pos \\ 100, initial_pos \\ 50) do
     result = 0
 
     # For each move, update the position of the lock, going to 0 from 99 or 99 to 0
@@ -31,12 +26,7 @@ defmodule Day1 do
     result
   end
 
-  defp part2() do
-    moves = parse_input()
-
-    # Lock goes from 0 to 99 => modulo 100
-    max_pos = 100
-    initial_pos =  50
+  def part2(moves, max_pos \\ 100, initial_pos \\ 50) do
 
     # For each move, update the position of the lock, going to 0 from 99 or 99 to 0
     # Then check how many times the lock passed before 0 exactly and increments the result by that amount
@@ -45,7 +35,6 @@ defmodule Day1 do
 
       # Count how many times we passed through 0
       passes = count_zero_crossings(pos, move, max_pos)
-      IO.puts("Passes: #{passes}")
 
       {new_pos, count + passes}
     end)
@@ -74,10 +63,12 @@ defmodule Day1 do
   end
 
   def main(_args) do
-    result = part1()
+    moves = parse_input()
+
+    result = part1(moves)
     IO.puts("Part 1: #{result}")
 
-    result = part2()
+    result = part2(moves)
     IO.puts("Part 2: #{result}")
   end
 end

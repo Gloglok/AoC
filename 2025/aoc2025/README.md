@@ -18,6 +18,26 @@ mix escript.build
 ./aoc2025
 ```
 
+## Running Tests
+
+Run all tests:
+
+```bash
+mix test
+```
+
+Run tests for a specific day:
+
+```bash
+mix test test/day1_test.exs
+```
+
+Run a specific test at a line number:
+
+```bash
+mix test test/day1_test.exs:line_number
+```
+
 ## Project Structure
 
 - `lib/day1.ex` - Day 1 solution
