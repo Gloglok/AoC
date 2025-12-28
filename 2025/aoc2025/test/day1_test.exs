@@ -7,20 +7,20 @@ defmodule Day1Test do
       path = Path.join([__DIR__, "day1_test.txt"])
 
       assert Day1.parse_input(path) == [
-        -50,
-        100,
-        -200,
-        300,
-        -101,
-        102,
-        -102,
-        101,
-        1,
-        -1,
-        -1,
-        2,
-        -2
-      ]
+               -50,
+               100,
+               -200,
+               300,
+               -101,
+               102,
+               -102,
+               101,
+               1,
+               -1,
+               -1,
+               2,
+               -2
+             ]
     end
   end
 
