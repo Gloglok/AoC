@@ -64,11 +64,11 @@ defmodule Day1 do
   defp count_zero_crossings(_pos, 0, _max_pos), do: 0
 
   def main(_args) do
-    moves =
-      Path.join([__DIR__, "../data/day1.txt"])
-      |> parse_input()
-
-    IO.puts("Part 1: #{part1(moves)}")
-    IO.puts("Part 2: #{part2(moves)}")
+    Path.join([__DIR__, "../data/day1.txt"])
+    |> parse_input()
+    |> tap(fn moves ->
+      IO.puts("Part 1: #{part1(moves)}")
+      IO.puts("Part 2: #{part2(moves)}")
+    end)
   end
 end
