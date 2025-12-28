@@ -2,6 +2,28 @@ defmodule Day1Test do
   use ExUnit.Case
   doctest Day1
 
+  describe "parse_input/1" do
+    test "parses input" do
+      path = Path.join([__DIR__, "day1_test.txt"])
+
+      assert Day1.parse_input(path) == [
+        -50,
+        100,
+        -200,
+        300,
+        -101,
+        102,
+        -102,
+        101,
+        1,
+        -1,
+        -1,
+        2,
+        -2
+      ]
+    end
+  end
+
   describe "part1/1" do
     test "counts exact landings on position 0" do
       # Starting at 50, move right 50 should land on 0
@@ -64,6 +86,12 @@ defmodule Day1Test do
       # Start at 50, move right 40: lands at 90, no crossing
       moves = [40]
       assert Day1.part2(moves) == 0
+    end
+
+    test "does count only one crossing when doing a full wrap from 0" do
+      # Start at 50, move right 40: lands at 90, no crossing
+      moves = [-100]
+      assert Day1.part2(moves, 100, 0) == 1
     end
 
     test "counts crossings across multiple moves" do

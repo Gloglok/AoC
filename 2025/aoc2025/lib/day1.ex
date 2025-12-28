@@ -3,8 +3,8 @@ defmodule Day1 do
   Advent of Code 2025 - Day 1
   """
 
-  defp parse_input() do
-    File.read!(Path.join([__DIR__, "../data/day1.txt"]))
+  def parse_input(path) do
+    File.read!(path)
     |> String.split("\n", trim: true)
     |> Enum.map(fn
       "L" <> num -> -String.to_integer(num)
@@ -63,7 +63,8 @@ defmodule Day1 do
   end
 
   def main(_args) do
-    moves = parse_input()
+    moves = Path.join([__DIR__, "../data/day1.txt"])
+    |> parse_input()
 
     result = part1(moves)
     IO.puts("Part 1: #{result}")
