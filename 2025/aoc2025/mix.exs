@@ -14,7 +14,7 @@ defmodule Aoc2025.MixProject do
   end
 
   defp escript do
-    [main_module: Day1]
+    [main_module: Day2]
   end
 
   # Run "mix help compile.app" to learn about applications.
